@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar color="primary-color-dark">
+    <ion-title>Resultado da Pesquisa</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card *ngFor="let r of result">
+    <ion-list>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col class="uf-style" width-20 center>{{ r.uf }}</ion-col>
+            <ion-col offset-10 width-70 center>
+              <h2>CEP: {{ r.cep }}</h2>
+              <h3>Localidade: {{ r.localidade }}</h3>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <button color="primary-text-color" ion-button block (click)="addCep(r)"><ion-icon name="star"></ion-icon> Favoritar</button>
+    </ion-list>
+  </ion-card>
+
+
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="primary-color-dark">
+
+    <ion-buttons menuToggle left>
+      <button ion-button>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>
+      ConsultCEP
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Estado</ion-label>
+      <ion-select [(ngModel)]="estado">
+        <ion-option *ngFor="let est of estados" value="{{ est[0] }}">{{ est[1] }} - {{ est[0] }}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Cidade</ion-label>
+      <ion-input type="text" [(ngModel)]="cidade"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button block color="primary-color" (click)="buscar()">Buscar</button>
+
+</ion-content>

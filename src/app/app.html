@@ -1,0 +1,18 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color="accent-color">
+      <img src="../assets/consultcep-logo.png" alt="">
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon class="icon-in-menu" name="{{ p.icon }}"></ion-icon>
+        {{ p.title }}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #content [root]="rootPage"></ion-nav>

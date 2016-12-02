@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar color="primary-color-dark">
+
+    <ion-buttons menuToggle left>
+      <button ion-button>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>Favoritos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngFor="let c of cepsList">
+    <ion-list>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col class="uf-style" width-20 center>{{ c.uf }}</ion-col>
+            <ion-col offset-10 width-70 center>
+              <h2>CEP: {{ c.cep }}</h2>
+              <h3>Localidade: {{ c.localidade }}</h3>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <button ion-button block color="danger" (click)="removeCep(c.cep)">
+        <ion-icon name="trash"> </ion-icon> Remover
+      </button>
+    </ion-list>
+  </ion-card>
+</ion-content>
